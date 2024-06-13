@@ -10,7 +10,7 @@ export default function SplashScreen({ navigation }) {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("Usuário logado", user);
-        navigation.navigate("HomeScreen");
+        navigation.navigate("NewsScreen");
       } else {
         console.log("Usuário não logados");
         navigation.navigate("LoginScreen");
