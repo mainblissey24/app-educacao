@@ -51,7 +51,7 @@ export default function LoginScreen({ navigation }) {
       const usuarioRef = await signInWithEmailAndPassword(auth, email, senha);
       console.log(usuarioRef);
       // Redirecionar para a tela principal ou outra tela após login bem-sucedido
-      navigation.navigate("NewsScreen");
+      navigation.navigate("RegisterScreen");
     } catch (error) {
       if (error.code === "auth/user-not-found") {
         setErrorMessage("Usuário não encontrado.");
