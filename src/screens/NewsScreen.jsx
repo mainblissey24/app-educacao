@@ -1,24 +1,27 @@
-import { FlatList, Text, View } from "react-native";
+
+
 import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import axios from 'axios';
 
+export default function NewsScreen () {
+  const [dados, setDados] = useState([]);
 
-export default function NewsScreen() {
-    const [news, setNews] = useState([]);
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        setDados(response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar dados:', error);
+      });
+  }, []);
 
-    useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character')
-          .then(response => response.json())
-          .then(json => setData(json.results))
-          .catch(error => console.error(error));
-      }, []);
-    
-      return (
-        <View>
-          <FlatList
-            data={data}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({ item }) => <Text>{item.name}</Text>}
-          />
-        </View>
-    );
-}
+  return (
+    <View>
+      {dados.map(item => (
+        <Text key={item.id}>{item.title}</Text>
+      ))}
+    </View>
+  );
+};
