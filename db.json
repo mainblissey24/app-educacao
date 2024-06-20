@@ -1,0 +1,25 @@
+{
+    "bags": [
+        {
+            "id": 1,
+            "title": "Bolsa Estilosa",
+            "color": "laranja",
+            "imgurl": "[^1^][13]",
+            "stock": 10
+        },
+        {
+            "id": 2,
+            "title": "Bolsa Legal",
+            "color": "preta",
+            "imgurl": "[^2^][14]",
+            "stock": 5
+        },
+        {
+            "id": 3,
+            "title": "Bolsa Interessante",
+            "color": "azul",
+            "imgurl": "[^3^][15]",
+            "stock": 17
+        }
+    ]
+}
